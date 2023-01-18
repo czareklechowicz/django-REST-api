@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from rest_framework import viewsets
 from api.serializers import UserSerializer
-from models import Cars
+from .models import Cars
 from .serializers import CarsSerializer
 
 
