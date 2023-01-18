@@ -1,6 +1,6 @@
 from django.db import models
 
-class cars(models.Model):
+class Cars(models.Model):
     brand = models.CharField(max_length=32),
     model = models.CharField(max_length=32),
     year = models.BooleanField(default = False),
