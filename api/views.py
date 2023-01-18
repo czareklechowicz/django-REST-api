@@ -10,5 +10,5 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
 class CarsViewSet(viewsets.ModelViewSet):
-    queryset = Cars.objects.all().order_by('-date_joined')
+    queryset = Cars.objects.all()
     serializer_class = CarsSerializer
