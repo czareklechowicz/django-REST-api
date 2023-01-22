@@ -17,6 +17,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('brand', models.CharField(max_length=32)),
                 ('model', models.CharField(max_length=32)),
+                ('price', models.CharField(max_length=32)),
                 ('year', models.TextField(max_length=32)),
                 ('kilometers', models.TextField(max_length=32)),
                 ('horse_power', models.TextField(max_length=32)),
