@@ -8,5 +8,6 @@ class Cars(models.Model):
     kilometers = models.TextField(max_length=32)
     horse_power = models.TextField(max_length=32)
     description = models.TextField(max_length=256)
+    broken = models.BooleanField(default = False)
 
     
