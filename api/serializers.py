@@ -11,4 +11,4 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class CarsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Cars
-        fields = ['brand', 'model', 'price', 'year', 'kilometers', 'horse_power', 'description']
+        fields = ['id', 'brand', 'model', 'price', 'year', 'kilometers', 'horse_power', 'description']
