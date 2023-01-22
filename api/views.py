@@ -2,10 +2,8 @@ from django.contrib.auth.models import User
 from rest_framework import viewsets
 from api.serializers import UserSerializer
 from .models import Cars
-from .serializers import CarsSerializer
+from .serializers import CarsSerializer,CarsMiniSerializer
 from rest_framework.response import Response
-from rest_framework.decorators import api_view, renderer_classes
-
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
@@ -21,5 +19,10 @@ class CarsViewSet(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         queryset = self.filter_queryset(self.get_queryset())
 
-        serializer = CarsSerializer(queryset, many=True)
+        serializer = CarsMiniSerializer(queryset, many=True)
+        return Response(serializer.data)
+    
+    def retrieve(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = CarsSerializer(instance)
         return Response(serializer.data)

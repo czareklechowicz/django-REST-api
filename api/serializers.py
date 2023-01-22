@@ -12,3 +12,8 @@ class CarsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Cars
         fields = ['id', 'brand', 'model', 'price', 'year', 'kilometers', 'horse_power', 'description', 'broken']
+
+class CarsMiniSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Cars
+        fields = ['brand']
